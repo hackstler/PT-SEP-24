@@ -80,15 +80,15 @@ let nombreCompletoEspacios = `Me llamo ${nombre} ${apellido} y tengo ${edad} añ
 // Me llamo Uma Thurman y tengo 7 años
 
 let texto = "Me llamo Uma Thurman y tengo 7 años";
-/* console.log(texto.length); // 35 ---> es el numero de letras y espacios, de elementos, que tiene ese string
+console.log(texto.length); // 35 ---> es el numero de letras y espacios, de elementos, que tiene ese string
 console.log(texto[0]); // M
-console.log(texto[34]); // s */
+console.log(texto[34]); // s
 
 
 //! --------- TYPE OF() --------- //
 // método que nos dice qué tipo de dato es lo que queramos saber
 
-/* let forma = "redonda";
+let forma = "redonda";
 console.log(typeof forma); // string
 
 let cantidad = 243;
@@ -111,7 +111,7 @@ console.log(typeof coche); // object ---> Object {clave : valor}
 let hola = function () {
     console.log("hola");
 }
-console.log(typeof hola); // function */
+console.log(typeof hola); // function
 
 //! --------- USANDO OPERADOR + CON DATOS PRIMITIVOS --------- //
 /* cuando usamos el operador + con number y string se hace una conversión del tipo de dato
@@ -138,7 +138,43 @@ console.log(1 < 2 < 3); // true ---> boolean
 console.log(3 > 2 > 1); // false ---> boolean
 // 3 > 2 = true ---> 1 > 1 = false
 
-console.log(2 + 2 + "2"); // 42 ---> string
+console.log(2 + 2 + "2"); // 2 + 2 = 4 --> "4 + "2" = "42" ---> string
 // 2 + 2 = 4 y la sumando "2" ---> se convierte es string = "42"
 
+console.log("2" + "2" - "2"); // 20
+// "2" + "2" = "22"
+// "22" - "2" = 20 --> number --> convierte 22 a number y el resta el siguiente 2
+/* el operador - solo funciona con números, entonces la primera operación es 22 y le resta 2 como number
+a pesar de ser los tres datos tipo string. Hace una conversión de datos de string a number cuando
+se encuentra con un operador diferente al operador + */
 
+
+//! --- Métodos de tipos de dato primitivo --- /
+
+//? toLowerCase() --> convertir a minúscula una cadena de texto
+
+let mayuscula = "HOLA";
+console.log(mayuscula.toLowerCase()); // "hola"
+
+//? toUpperCase() --> convertir a mayúscula una cadena de texto
+let minuscula = "adios";
+console.log(minuscula.toUpperCase()); // "ADIOS"
+
+//? toFixed() --> redondea en enteros o decimales segñun le indiquemos
+
+let numero = 10.6739475465;
+console.log(numero.toFixed()); // 11 --> devuelve el numero sin decimales redondeado, como es 10.6, devuelve 11
+console.log(numero.toFixed(3)); // 10.674 ---> devuelve el numero con 3 decimales y lo redondea
+
+
+// EJERCICIO ---> formar una frase con esas tres variables
+
+let a = "Me llamo Pepito";
+let b = "estudio veterinaria";
+let c = "y tengo 20 años";
+
+let frase = `${a} ${b} ${c}`; // Me llamo Pepito estudio veterinaria y tengo 20 años
+
+console.log(frase);
+
+// usamos `` para poder encapsular con ${variable} variables y unirlas

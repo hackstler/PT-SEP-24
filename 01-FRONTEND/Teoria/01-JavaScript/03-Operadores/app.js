@@ -60,6 +60,39 @@ console.log(x != y); // false --> x es distinto de y? NO --> valor
 console.log(x !== y); // true --> mismo valor y distinto tipo
 console.log(x !== z); // true --> mismo tipo y distinto valor
 
+!true // false
+!false // true 
+
+
+//? -------- Otros operadores ---- //
+
+//! ------ OR || ---> devuelve true cuando uno de los valores que comparamos es true
+// un valor de todos los que se comparen tiene que ser true
+
+let efectivo = true; // tengo efectivo
+let tarjeta = false; // no tengo tarjeta
+let pagar = efectivo || tarjeta; // puedes pagar si tienes efectivo O tarjeta
+console.log(pagar);
+/* devuelve TRUE porque uno de los valores es true, tengo efectivo 
+con lo cual puedo pagar aunque no tenga tarjeta */
+
+//! ------ AND && ---> devuelve true si todos los valores que compara son true
+// si uno de los valores es false, devuelve false
+
+let coche = false;
+let carnetConducir = true;
+let puedoConducir = coche && carnetConducir; // solo si las dos son true podré conducir
+console.log(puedoConducir); // false, porque no tengo coche aunque si tengo carnetConducir
+
+
+//? ------ operador de agrupación ()
+// controla el orden de las operaciones poniendo por delante la que va entre paréntesis ()
+console.log(2 + 3 * 5); // primero hace la multiplicacion y luego la suma ---> 17
+console.log((2 + 3) * 5); // agrupo la suma y la hace primero y multiplica el resultado por 5
+
+
+
+
 // EXTRA
 
 console.log(1 == 1); // valor ---> true

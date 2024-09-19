@@ -42,7 +42,7 @@ let array = [
     'otro texto'
 ]; 
 
-// OBJECT ---> coleccion de datos en forma de clave:valor tambien separados por comas
+// OBJECT ---> coleccion de datos en forma de clave:valor (key:value) tambien separados por comas
 let objeto = {
     //clave : valor,
     nombre : "Bea",
@@ -55,10 +55,6 @@ let objeto = {
 let funcion = function nombre(parametro1, parametro2) {
     // instruccion ---> codigo que queramos
 }
-
-//// NaN ---> Not a Number
-// entidades no numericas, tipos de dato que no son number aunque lleven dentro un numero
-
 
 
 //! --------- STRING --------- //
@@ -77,7 +73,7 @@ let nombreCompleto = nombre + apellido; // UmaThurman
 y formar frases con espacios y diferentes variables*/
 
 let nombreCompletoEspacios = `Me llamo ${nombre} ${apellido} y tengo ${edad} años`;
-// Me llamo Uma Thurman y tengo 7 años
+// Me llamo Uma Thurman y tengo 7 años --> string
 
 let texto = "Me llamo Uma Thurman y tengo 7 años";
 console.log(texto.length); // 35 ---> es el numero de letras y espacios, de elementos, que tiene ese string
@@ -149,10 +145,9 @@ a pesar de ser los tres datos tipo string. Hace una conversión de datos de stri
 se encuentra con un operador diferente al operador + */
 
 
-//! --- Métodos de tipos de dato primitivo --- /
+//! --- Métodos para string --- /
 
 //? toLowerCase() --> convertir a minúscula una cadena de texto
-
 let mayuscula = "HOLA";
 console.log(mayuscula.toLowerCase()); // "hola"
 
@@ -160,11 +155,50 @@ console.log(mayuscula.toLowerCase()); // "hola"
 let minuscula = "adios";
 console.log(minuscula.toUpperCase()); // "ADIOS"
 
-//? toFixed() --> redondea en enteros o decimales segñun le indiquemos
+//? includes() --> comprueba si un caracter o una palabra está incluido en un string
+// devuelve un boolean --> true o false
+const unaFrase = "Decidme una frase por favor";
+console.log(unaFrase.includes("gracias")); // false
+console.log(unaFrase.includes("favor")); // true
 
+//? repeat() --> devuelve un nuevo string con el numero de copias que le indiquemos
+const mascota = "perro";
+console.log(mascota.repeat(3)); // perroperroperro
+
+//? replace() --> reemplaza unos caracteres por otros
+// solo cambia el primero que se encuentre igual
+const nuevoCoche = "Audi A4";
+console.log(nuevoCoche.replace("A4", "A3")); // Audi A3
+
+//? replaceAll() --> reemplaza todos los iguales por lo que le indiquemos
+// cambia todos los que se encuentre iguales
+const cita = "Tres tristes tigres están tristes";
+console.log(cita.replaceAll("tristes", "felices")); //Tres felices tigres están felices
+
+//! --- Métodos para number --- /
+
+//? toFixed() --> redondea en enteros o decimales según le indiquemos
 let numero = 10.6739475465;
 console.log(numero.toFixed()); // 11 --> devuelve el numero sin decimales redondeado, como es 10.6, devuelve 11
 console.log(numero.toFixed(3)); // 10.674 ---> devuelve el numero con 3 decimales y lo redondea
+
+//? parseInt() --> convierte un valor de tipo string a number
+const precioString = "200";
+console.log(typeof(parseInt(precioString))); // 200 --> number
+
+//? toString() --> convierte un valor de tipo number a string
+const precioNumber = 200;
+console.log(typeof (precioNumber.toString())); // 200 --> string
+
+//// NaN ---> Not a Number
+// determina si el valor es de tipo numérico ya sea un tipo de dato number o no
+// puede ser un valor número dentro de un string o de un boolean
+// si detecta un número nos devuelve false, si no detecta un número nos devuelve true
+
+console.log(isNaN("bootcamp")); // true --> es un string que no lleva un numero dentro
+console.log(isNaN("32434")); // false --> es un string y lleva un numero dentro
+console.log(isNaN(3434)); // false --> es un numero number
+console.log(isNaN(false)); // false --> es un booleano pero tiene valor 0 que es un numero
 
 
 // EJERCICIO ---> formar una frase con esas tres variables

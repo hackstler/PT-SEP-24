@@ -159,5 +159,161 @@ apuntar la variable peces2 a la variable dinero2, entonces si se modifica la pri
 se modifica a la que apunta (dinero2) por eso en las comparaciones( ==, ===) so dice true, que si son iguales
 */
 
+//// spread operator {...objeto} --> copia de objeto
+// sirve para hacer una copia de otro objeto
+// el ordenador se lo toma como dos objetos distintos
+// se pueden modificar por separado, es decir, si modifico la copia o el original no se modifica el otro
+// no se modifican mutuamente, una vez hecho el spread operator son dos objetos distintos
 
-//// map()
+const original = { 
+    name : 'Bea', 
+    apellido : 'Serrano' 
+};
+
+const copiaOriginal = {
+    ...original
+}
+
+console.log(original); // { name: 'Bea', apellido: 'Serrano' }
+console.log(copiaOriginal); // { name: 'Bea', apellido: 'Serrano' }
+
+console.log(original == copiaOriginal); // false
+console.log(original === copiaOriginal); // false
+
+// Cambio del original --> no se modifica la copia
+original.name = 'Noelia';
+console.log(original); // { name: 'Noelia', apellido: 'Serrano' }
+console.log(copiaOriginal); // { name: 'Bea', apellido: 'Serrano' }
+
+// Cambio de la copia --> no se modifica el original
+copiaOriginal.name = 'Noelia';
+console.log(original); // { name: 'Bea', apellido: 'Serrano' }
+console.log(copiaOriginal); // { name: 'Noelia', apellido: 'Serrano' }
+
+
+// Crear copia y modificar propiedades a partir del original
+
+const extra = {
+    marca : 'Samsung',
+    color : 'verde',
+    age : 2024,
+};
+
+const extraCompleto = {
+    ...extra,
+    color : 'rojo',
+}
+
+console.log(extra); // { marca: 'Samsung', color: 'verde', age: 2024 }
+console.log(extraCompleto); // { marca: 'Samsung', color: 'rojo', age: 2024 }
+
+
+
+//// map() --> ejercicio array y objetos dentro
+// crea un nuevo array con la instrucción que le digamos
+// dentro de map usamos una función
+
+const animales = [
+    {
+        name : 'cat',
+        size : 'small'
+    },
+    {
+        name : 'elephant',
+        size : 'big'
+    },
+    {
+        name : 'lion',
+        size : 'medium'
+    },
+    {
+        name : 'dog',
+        size : 'small'
+    }
+];
+
+console.log(animales); // un array de 5 objetos
+
+const nombreAnimales = animales.map( animal => {
+    return animal.name
+});
+console.log(nombreAnimales); // [ 'cat', 'elephant', 'lion', 'dog' ]
+
+const frase = animales.map(elemento => `This animal is a ${elemento.name} and its size is ${elemento.size}`)
+console.log(frase);
+/* 
+        [
+            'This animal is a cat and its size is small',
+            'This animal is a elephant and its size is big',
+            'This animal is a lion and its size is medium',
+            'This animal is a dog and its size is small'
+        ] 
+*/
+
+//// this
+// se usa para referirnos al mismo objeto donde estamos
+// con this podemos acceder a las propiedades de un objeto dentro del mismo
+
+let trabajador = {
+    nombre : 'Bea Serrano',
+    bootcamp : 'FullStack',
+    localizacion : 'Online',
+    pausaCafe : function () {
+        console.log(`${this.nombre} es hora de un descanso 😆`);
+    }
+}
+
+console.log(trabajador.pausaCafe()); // Bea Serrano es hora de un descanso 😆
+
+
+
+
+//? --- Ejercicio --> Sacamos nombres y apellidos --> "soy nombre apellido"
+
+const personajes = [
+    {
+        nombre : 'Jon',
+        apellido : 'Snow'
+    },
+    {
+        nombre : 'Luca',
+        apellido : 'Modric'
+    },
+    {
+        nombre : 'Lisa',
+        apellido : 'Simpson'
+    },
+    {
+        nombre : 'Fernando',
+        apellido : 'Alonso'
+    }
+];
+
+// ejercicio resuelto con función completa
+const nombres = personajes.map(
+    function (elemento) {
+        return `Soy ${elemento.nombre} ${elemento.apellido}`
+    }
+);
+
+// ejercicio resuelto con función arrow
+const nombresArrow = personajes.map(
+    elemento => `Soy ${elemento.nombre} ${elemento.apellido}`
+);
+console.log(nombresArrow);
+
+
+//? Ejercicio --> acortar dias de la semana a 3 primeras letras
+
+const dias = [
+    'Lunes',
+    'Martes',
+    'Miércoles',
+    'Jueves',
+    'Viernes',
+    'Sábado',
+    'Domingo'
+];
+
+let diasCortos = dias.map( cadaDia => cadaDia.substring(0, 3))
+console.log(diasCortos); // [ 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom' ]  

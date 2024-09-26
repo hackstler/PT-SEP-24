@@ -129,7 +129,6 @@ try {
 // ambos bloques se separan con un signo ":", en el que el primer bloque es TRUE y el segundo FALSE
 
 let nota = 1;
-console.log(`Mi nota es un ${nota}`);
 
 let calificacion = nota >= 5 ? console.log('Aprobado') : console.log('Suspenso');
 
@@ -141,3 +140,10 @@ let calificacion = nota >= 5 ? console.log('Aprobado') : console.log('Suspenso')
 */
 
 // Se pueden concatenar, unir varios ternarios con varias condiciones
+let edad = 20;
+
+let clasificarEdad =  edad < 13 
+                    ? "Niño" : edad >= 13 && edad < 18 
+                    ? "Adolescente" : "Adulto";
+
+console.log(clasificarEdad);

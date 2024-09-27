@@ -95,6 +95,9 @@ console.log(areaRectangulo(5, 3)); // el área de este rectángulo es 15
 // no necesita palabra clave 'function'
 // no necesita corchetes {} ni return --> se reemplazar por la flecha =>
 
+    //* parametro => instrucción
+    //* ( parametro1, parametro2 ) => instruccion
+
     // función arrow con un parámetro --> no hace falta los paréntesis
     const area3 = lado => `${lado ** 2}`
     area3(2); // 4

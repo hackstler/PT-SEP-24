@@ -141,8 +141,8 @@ console.log(unirTres);
 let colores = ['azul', 'morado', 'verde'];
 let mayusTodos = colores.forEach(
     // necesita una callback --> función dentro de una función, en este caso dentro de un método forEach
-    function (colores) {
-        console.log("Esto es color", colores.toUpperCase());
+    function (color) {
+        console.log("Esto es color", color.toUpperCase());
     }
 )
 // Esto es color AZUL

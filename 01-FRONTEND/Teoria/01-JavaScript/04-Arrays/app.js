@@ -172,9 +172,9 @@ let nums = [1, 5, 3, 4, 5, 6];
 // encuentra el primer número par con el método find
 // un número es par cuando se divide entre 2 y resto de la división = 0
 let primerPar = nums.find(
-    function (nums) {
+    function (cadaNum) {
         // instrucción para ver si un número es par --> el resto de la división % tiene que ser === 0
-        return nums % 2 === 0;
+        return cadaNum % 2 === 0;
     }
 );
 console.log(primerPar); // 4 --> es el primer par que se ha encontrado que cumple nuestra condición
@@ -201,8 +201,8 @@ console.log(todosPares); // true --> todos los números del array son pares, tod
 
 let numbers = [1, 2, 3, 4, 5];
 let algunPar = numbers.some(
-    function (numbers) {
-        return numbers % 2 === 0;
+    function (cadaNumber) {
+        return cadaNumber % 2 === 0;
     }
 )
 console.log(algunPar); // true ---> hay al menos un número par en este array

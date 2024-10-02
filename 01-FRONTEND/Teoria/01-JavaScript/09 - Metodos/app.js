@@ -204,7 +204,7 @@ let candidatosCriterios = candidatos.find(function (candidato) {
 console.log(candidatosCriterios); // { nombre: 'María', experiencia: 3, edad: 24 }
 
 
-//// some + map + push + spread operator
+//// some + map + push + spread operator + condicional if else + condicional ternario
 // comprueba si AL MENOS UN elemento del array cumple una condición
 
 let carrito = [
@@ -229,7 +229,7 @@ if (verificarProducto == true) {
     // si SI está en el carrito, buscamos el id del producto que queramos con un mapeo y sumamos 1
     carrito = carrito.map(cadaProducto => 
         cadaProducto.id === productoId 
-        ? {...cadaProducto, cantidad : cadaProducto.cantidad + 1 }
+        ? {...cadaProducto, cantidad : cadaProducto.cantidad + 1 } // copiamos con Spread Operator el carrito entero y modificabamos la propiedad cantidad
         : cadaProducto
     )
 } else {
@@ -259,7 +259,7 @@ console.log(carrito);
     ]
 */
 
-//? Replicamos el if else sin operador ternario, con otor if else dentro
+//? Replicamos el if else sin operador ternario, con otro if else dentro
 
 if (verificarProducto == false) {
     // agrego el producto nuevo al carrito
@@ -280,3 +280,56 @@ if (verificarProducto == false) {
         }
     })
 }
+
+
+//// bind() + this
+// crea una función a partir de otra función que ya existe
+// es un método que se aplica a una función
+// la nueva función que se crea se puede usar en cualquier momento
+
+// el this de dentro de la función saluda, hace referencia al objeto que usamos en el método bind
+
+let persona = { 
+    nombre : 'Laura',
+    apellido : 'Gutierrez',
+    hobby : 'leer'
+};
+
+let saludo = function () {
+    console.log(`Hola, ni nombre es ${this.nombre} ${this.apellido} y me gusta ${this.hobby}`);
+}.bind(persona)
+
+saludo() // Hola, ni nombre es Laura Gutierrez y me gusta leer
+
+
+//// call()
+// se usa para llamar a una función y se le pasan argumentos que personalizan esa función: objeto y parámetro de la función
+// este método se le aplica a la llamada de la función ---> nombreFuncion.call()
+
+let persona2 = { nombre : 'Bea' };
+let persona3 = { nombre : 'Jane' };
+
+let saludo2 = function (miSaludo, miDespedida) {
+    console.log(`${miSaludo}, me llamo ${this.nombre}, ${miDespedida}`);
+}
+
+// persona2 y persona3 son los objetos a los que hace referencia a this en la función
+// 'Hola' y 'Hello' es el parámetro miSaludo de la función
+// 'adiós' y 'bye' es el parámetro miDespedida de la función
+
+//* primero se nombra el objeto al que hace referencia this!!! y luego los parámetros de la función
+// en la llamada a la función aplico el método .call(objeto, parametro, parametro)
+
+saludo2.call(persona2, 'Hola', 'adiós') // Hola, me llamo Bea, adiós
+saludo2.call(persona3, 'Hello', 'bye') // Hello, me llamo Jane, bye
+
+
+//// apply()
+// funciona igual que call 
+// en la llamada a función, los parámetros de la función van entre corchetes de array []
+
+// usamos los objetos persona2 y persona3 y la función saludo2
+// llamamos a función aplicando el método .apply()
+
+saludo2.apply(persona2, ['Hola', 'adiós']) // Hola, me llamo Bea, adiós
+saludo2.apply(persona3, ['Hello', 'bye']) // Hello, me llamo Jane, bye

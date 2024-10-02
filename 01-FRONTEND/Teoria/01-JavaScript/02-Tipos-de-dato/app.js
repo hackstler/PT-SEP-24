@@ -212,3 +212,54 @@ let frase = `${a} ${b} ${c}`; // Me llamo Pepito estudio veterinaria y tengo 20 
 console.log(frase);
 
 // usamos `` para poder encapsular con ${variable} variables y unirlas
+
+
+//// TEMPLATE STRING ----> crea strings
+// usamos BACKTICKS ```
+
+// una línea
+const namePeople = 'Juan';
+const age = 30;
+const saludo = `Hola, me llamo ${namePeople} y tengo ${age} años`;
+
+console.log(saludo); // Imprime "Hola, me llamo Juan y tengo 30 años"
+
+// multilínea
+
+const poema = `
+A ti, mi amado,
+que con tu sonrisa
+llenas mi vida
+de luz y alegría.
+`;
+
+console.log(typeof poema); // string
+console.log(poema);
+
+/* A ti, mi amado,
+que con tu sonrisa
+llenas mi vida
+de luz y alegría. */
+
+//// qué pasa si el poema lo creo con '' o "" en vez de con backticks ``
+// no se puede saltar del línea creando un string con comillas "dobles" o 'simples'
+
+// descomentar para ver que da error
+
+/* 
+    const poemaMal = '
+    A ti, mi amado,
+    que con tu sonrisa
+    llenas mi vida
+    de luz y alegría.
+    '; 
+*/
+
+//// crear bloque de código HTML con template string ``
+
+let html = `<ul>
+	<li>name: ${namePeople}</li>
+	<li>age: ${age}</li>
+</ul>`;
+
+console.log(html);

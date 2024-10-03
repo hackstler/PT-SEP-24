@@ -104,5 +104,3 @@ console.log(empleado.puesto); // Teacher
 // con destructuring
 
 const { nombre, apellido, puesto } = empleado;
-
-

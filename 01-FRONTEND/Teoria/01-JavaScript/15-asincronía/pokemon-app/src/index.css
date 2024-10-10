@@ -1,0 +1,48 @@
+/* src/index.css */
+.app {
+  text-align: center;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokemon-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  width: 150px;
+  text-align: center;
+}
+
+.pokemon-card img {
+  width: 100px;
+  height: auto;
+}
+
+.pokemon-search {
+  margin-bottom: 20px;
+}
+
+.pokemon-search form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pokemon-search input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.pokemon-search button {
+  padding: 8px;
+  border: none;
+  background-color: #ffcb05;
+  border-radius: 4px;
+  cursor: pointer;
+}

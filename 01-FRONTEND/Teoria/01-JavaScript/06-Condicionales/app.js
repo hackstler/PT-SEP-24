@@ -66,6 +66,8 @@ if (num < 100) {
     console.log(num * 2);
     // num no cumple ninguna de las dos primeras condicione y ejecuta el else, la ultima opción
 }
+ 
+// sumar (1,2)
 
 //? switch
 // comprobamos una variable que es la "key", switch no usa una condición si no que comprueba una variable

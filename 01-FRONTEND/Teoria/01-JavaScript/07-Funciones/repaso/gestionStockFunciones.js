@@ -6,9 +6,6 @@ const inventario = [
   ];
 
 
-  const store = []
-
-
 // Función 1: Añadir un Producto
 
 function agregarProducto(nombre, categoria, cantidad, precio) {
@@ -35,3 +32,19 @@ console.log(buscarProducto('nomBre', 'cAmisa'))
 
 
 // Función 3: Actualizar Stock
+
+function actualizarStock(nombre, cantidadCambio) {
+    // Busca en 'inventario' el producto cuyo nombre coincida (sin distinguir mayúsculas)
+    let producto = inventario.find(item => item.nombre.toLowerCase() === nombre.toLowerCase());
+    
+    // Verifica si el producto fue encontrado
+    if (producto) {
+      // Si lo encontró, ajusta la cantidad del producto sumando el 'cantidadCambio' proporcionado
+      producto.cantidad += cantidadCambio;
+      // Muestra un mensaje en la consola con el nuevo stock del producto
+      console.log(`Stock de "${nombre}" actualizado a ${producto.cantidad}.`);
+    } else {
+      // Si no encontró el producto, muestra un mensaje indicando que no se encontró
+      console.log(`Producto "${nombre}" no encontrado.`);
+    }
+  }

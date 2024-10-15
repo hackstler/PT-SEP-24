@@ -42,23 +42,25 @@
             width="150" onclick="alert('¡Has hecho clic en la foto!')">
         <!-- Imagen de perfil con un alert al hacer clic -->
     </header>
+
     <!-- Mensaje que se mostrará al cargar la página -->
     <div id="mensajeCarga" style="display: none; color: green;">
         <!-- Mensaje oculto por defecto que se muestra al cargar la página -->
         ¡Página cargada con éxito!
     </div>
 
-
+    <!-- Sección de contacto -->
     <section id="contacto" class="seccion"> <!-- Sección de contacto con información básica -->
         <h2>Contacto</h2> <!-- Título de la sección de contacto -->
         <p>Email: <a href="mailto:Sergio.perez@example.com" accesskey="E">Sergio.perez@example.com</a></p>
         <!-- Enlace de correo electrónico con una tecla de acceso rápido -->
         <p>Teléfono: <a href="tel:+1234567890">+123 456 7890</a></p>
         <!-- Enlace que permite realizar una llamada telefónica -->
-        <p>LinkedIn: <a href="https://linkedin.com/in/sergio-hackstler" target="_blank" data-share="800">Perfil de
+        <p>LinkedIn: <a href="https://linkedin.com/in/Sergio-perez" target="_blank" data-share="800">Perfil de
                 LinkedIn</a></p> <!-- Enlace a LinkedIn que abre en una nueva pestaña -->
     </section>
 
+    <!-- Sección de educación -->
     <section id="educacion" class="seccion"> <!-- Sección de educación con títulos académicos -->
         <h2>Educación</h2> <!-- Título de la sección de educación -->
         <article>
@@ -77,11 +79,11 @@
         <details> <!-- Elemento desplegable que muestra detalles al hacer clic -->
             <summary>Desarrollador Web Senior en TechCorp</summary> <!-- Título del elemento desplegable -->
             <p>2020 - Presente</p>
-            <ol>
+            <ul>
                 <li>Desarrollo y mantenimiento de aplicaciones web.</li> <!-- Tareas y responsabilidades -->
                 <li>Implementación de APIs RESTful y GraphQL.</li>
                 <li>Optimización de rendimiento en aplicaciones críticas.</li>
-            </ol>
+            </ul>
         </details>
         <details>
             <summary>Desarrollador Web Junior en Soft Solutions</summary>
@@ -94,11 +96,13 @@
         </details>
     </section>
 
+    <!-- Sección de habilidades con gráficos en canvas -->
     <section id="habilidades" class="seccion"> <!-- Sección de habilidades con un canvas para gráficos -->
         <h2>Habilidades</h2>
         <canvas id="habilidadesCanvas" width="300" height="150"></canvas> <!-- Canvas para gráficos de habilidades -->
     </section>
 
+    <!-- Sección multimedia -->
     <section id="multimedia" class="seccion"> <!-- Sección con elementos multimedia como video y audio -->
         <h2>Proyectos Audiovisuales</h2>
         <video controls width="300"> <!-- Elemento de video con controles -->
@@ -113,6 +117,7 @@
         </audio>
     </section>
 
+    <!-- Sección de formulario de contacto con tipos avanzados -->
     <section id="formulario_contacto" class="seccion"> <!-- Sección de formulario de contacto -->
         <h2>Contáctame</h2>
         <form action="/submit_form" method="post"> <!-- Formulario que envía los datos mediante POST -->
@@ -203,13 +208,13 @@
         </table>
     </section>
 
-
     <!-- Pie de página -->
     <footer id="footer">
         <p>&copy; 2023 Sergio Pérez</p> <!-- Información de derechos de autor -->
         <p>Todos los derechos reservados</p>
     </footer>
 
+    <!-- Script para manejar eventos y el canvas -->
     <script>
         // Función para mostrar el mensaje de carga
         function mostrarMensajeCarga() {
@@ -229,3 +234,6 @@
         });
 
     </script>
+</body>
+
+</html>

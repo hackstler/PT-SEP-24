@@ -1,0 +1,129 @@
+/* Reset y estilos básicos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-image: url(https://lumiere-a.akamaihd.net/v1/images/pp_xmen1992_herobanner_21369_2ead90c7.jpeg?region=0,0,2048,878);
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header h1 {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+  }
+  
+  /* Estilo para el menú de navegación */
+  nav {
+    background-color: #333;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav li {
+    flex: 1;
+    text-align: center;
+  }
+  
+  nav a {
+    display: block;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  /* Pseudoelemento para añadir corchetes a los enlaces de navegación */
+  nav a::before {
+    content: "[";
+    color: white;
+    margin-right: 5px;
+  }
+  
+  nav a::after {
+    content: "]";
+    color: white;
+    margin-left: 5px;
+  }
+  
+  /* Hover y focus para los enlaces de navegación */
+  nav a:hover {
+    background-color: #555; /* Fondo gris más claro al pasar el ratón */
+    color: red; /* Color rojo para el texto */
+  }
+  
+  nav a:focus {
+    background-color: #555; /* Fondo gris más claro cuando el enlace tiene foco */
+    color: purple; /* Color morado cuando tiene el foco */
+    outline: 2px solid purple; /* Borde morado alrededor */
+  }
+  
+  nav a:active {
+    background-color: #555; /* Fondo gris más claro al hacer click */
+    color: purple; /* Color morado al hacer click */
+  }
+  
+  /* Estilo para el contenido principal */
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+
+  section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para las listas dentro de la sección */
+  section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+  
+  /* Sustitución de puntos por emoji '🅧' y estilo para la lista */
+  section ul li::before {
+    content: "🅧";
+    padding-right: 5px;
+    color: crimson;
+  }
+  
+  /* Estilo para los enlaces dentro de la lista de aventuras */
+  section a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 0.8em;
+  }
+  

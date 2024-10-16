@@ -1,0 +1,54 @@
+/* Restablece el padding y el margin en todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Define la fuente global */
+}
+
+/* Estilo para el cuerpo del documento */
+body {
+  background-color: #4508AD; /* Color de fondo claro */
+}
+
+/* Estilo para el contenedor principal */
+main {
+  padding-top: 1rem; /* Espacio superior */
+  padding-left: 1rem; /* Espacio a la izquierda */
+  color: black; /* Color de texto negro */
+}
+
+/* Estilo para listas no ordenadas y ordenadas */
+ul, ol {
+  padding-left: 2rem; /* Espaciado a la izquierda para las listas */
+}
+
+/* Estilo para elementos con la clase "like" */
+.like {
+  color: green; /* Color verde para los elementos gustados */
+}
+
+/* Estilo para elementos de lista dentro de la lista ordenada (ol) */
+ol li {
+  color: crimson; /* Color carmesí para dislikes */
+}
+
+/* Estilo específico para el elemento con la clase "thunder" */
+.thunder {
+  color: purple; /* Color púrpura solo para este elemento */
+}
+
+/* Estilo para enlaces */
+a {
+  color: plum; /* Color ciruela para el enlace */
+  font-style: italic; /* Texto en cursiva */
+}
+
+/* Estilo para los encabezados h3 */
+h3 {
+  font-style: italic; /* Texto en cursiva */
+}
+
+/* Estilo para la imagen */
+img {
+  border-radius: 1rem; /* Bordes redondeados */
+}

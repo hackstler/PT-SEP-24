@@ -1,0 +1,57 @@
+/* Reset y estilos básicos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-size: 16px; /* Tamaño de fuente por defecto */
+    font-family: sans-serif;
+    color: white;
+    background-color: black;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 1rem 2%; /* Padding relativo para mantener consistencia */
+  }
+  
+  h1 {
+    font-size: 2em; /* El doble del tamaño de fuente por defecto (32px) */
+    margin: 0;
+  }
+  
+  img {
+    height: 80px; /* Altura ajustada de manera absoluta */
+  }
+  
+  main {
+    max-width: 1000px; /* Ancho máximo del main */
+    margin: 0 auto;
+    padding: 1rem; /* Padding relativo basado en el tamaño por defecto */
+    text-align: left;
+  }
+  
+  h2,
+  h3 {
+    margin: 1rem 0;
+  }
+  
+  ul {
+    list-style: none; /* Elimina el estilo de lista predeterminado */
+  }
+  
+  li {
+    margin: 0.5rem 0; /* Espacio entre elementos de la lista */
+  }
+  
+  footer {
+    background-color: #999;
+    padding: 1rem; /* Padding relativo basado en el tamaño por defecto */
+    text-align: center;
+  }
+  

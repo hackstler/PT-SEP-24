@@ -33,21 +33,15 @@
 </head>
 
 <body onload="mostrarMensajeCarga()"> <!-- Ejecuta la función mostrarMensajeCarga() al cargar la página -->
-
     <!-- Encabezado del CV -->
     <header id="header"> <!-- Define el encabezado del documento -->
         <h1>Sergio Pérez</h1> <!-- Título del CV con el nombre del titular -->
         <p contenteditable="true">Desarrollador Web Full Stack</p> <!-- Descripción editable del perfil profesional -->
-        <img src="https://via.placeholder.com/150" alt="Foto de perfil de Sergio Pérez" title="Foto de Sergio Pérez"
-            width="150" onclick="alert('¡Has hecho clic en la foto!')">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGO5WIQS3Xtqw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1726335702927?e=1734566400&v=beta&t=hhoUG4MFCyfYDRz-7MFYxYMuBm2SDMy9i6vDBcld6fU"
+            alt="Foto de perfil de Sergio Pérez" title="Foto de Sergio Pérez" width="150"
+            onclick="alert('¡Has hecho clic en la foto!')">
         <!-- Imagen de perfil con un alert al hacer clic -->
     </header>
-
-    <!-- Mensaje que se mostrará al cargar la página -->
-    <div id="mensajeCarga" style="display: none; color: green;">
-        <!-- Mensaje oculto por defecto que se muestra al cargar la página -->
-        ¡Página cargada con éxito!
-    </div>
 
     <!-- Sección de contacto -->
     <section id="contacto" class="seccion"> <!-- Sección de contacto con información básica -->
@@ -56,7 +50,7 @@
         <!-- Enlace de correo electrónico con una tecla de acceso rápido -->
         <p>Teléfono: <a href="tel:+1234567890">+123 456 7890</a></p>
         <!-- Enlace que permite realizar una llamada telefónica -->
-        <p>LinkedIn: <a href="https://linkedin.com/in/Sergio-perez" target="_blank" data-share="800">Perfil de
+        <p>LinkedIn: <a href="https://linkedin.com/in/sergio-hackstler" target="_blank" data-share="800">Perfil de
                 LinkedIn</a></p> <!-- Enlace a LinkedIn que abre en una nueva pestaña -->
     </section>
 
@@ -165,15 +159,6 @@
             <button type="submit">Enviar</button> <!-- Botón para enviar el formulario -->
         </form>
     </section>
-
-    <!-- Botones para mostrar diálogos -->
-    <button onclick="document.getElementById('bienvenidaDialog').showModal()">Mostrar Bienvenida</button>
-    <!-- Botón que muestra un diálogo modal de bienvenida -->
-    <dialog id="bienvenidaDialog"> <!-- Define un diálogo modal -->
-        <p>¡Bienvenido al CV interactivo de Sergio Pérez!</p>
-        <button onclick="document.getElementById('bienvenidaDialog').close()">Cerrar</button>
-        <!-- Botón para cerrar el diálogo -->
-    </dialog>
 
     <!-- Sección de tabla de proyectos -->
     <section id="proyectos" class="seccion"> <!-- Sección de proyectos completados con una tabla -->

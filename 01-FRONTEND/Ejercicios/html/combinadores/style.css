@@ -1,0 +1,6 @@
+/* Selector descendente para aplicar estilos a todos los <p> dentro de <section> */
+section p {
+    color: grey; /* Cambia el color del texto a gris */
+    font-style: italic; /* Aplica estilo en cursiva al texto */
+  }
+  

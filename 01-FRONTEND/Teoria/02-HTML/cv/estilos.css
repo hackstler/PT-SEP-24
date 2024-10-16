@@ -1,0 +1,211 @@
+/* --- Estilos Generales del Documento --- */
+
+body {
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente 'Poppins' para un aspecto moderno y profesional */
+    color: #333; /* Define un color gris oscuro para el texto principal, lo que facilita la lectura */
+    background-color: #f4f7fa; /* Establece un color de fondo suave y neutro que mejora la visibilidad del contenido */
+    margin: 0; /* Remueve cualquier margen por defecto del navegador */
+    padding: 0; /* Remueve el relleno por defecto del navegador */
+    line-height: 1.6; /* Aumenta el espaciado entre líneas para mejorar la legibilidad */
+}
+
+/* --- Encabezado del CV --- */
+
+#header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Aplica un fondo degradado en tonos púrpura y azul */
+    color: white; /* Cambia el color del texto a blanco para un buen contraste con el fondo */
+    padding: 40px 0; /* Añade espacio superior e inferior para dar respiro al contenido */
+    text-align: center; /* Centra el texto en el encabezado */
+    position: relative; /* Define una posición relativa para un mejor control de elementos internos */
+    overflow: hidden; /* Evita que el contenido sobresalga, útil para manejar efectos */
+}
+
+#header h1 {
+    font-size: 3em; /* Aumenta el tamaño de la fuente para resaltar el nombre */
+    margin: 0; /* Elimina márgenes que puedan afectar el diseño */
+    font-weight: bold; /* Hace el texto más grueso para dar énfasis */
+}
+
+#header p {
+    font-size: 1.2em; /* Define un tamaño de fuente más pequeño para el subtítulo */
+    margin: 10px 0; /* Añade margen para separarlo del resto del contenido */
+    opacity: 0.9; /* Da un efecto de ligera transparencia para suavizar el texto */
+}
+
+/* Estilo para la imagen de perfil */
+#header img {
+    border-radius: 50%; /* Hace la imagen redonda, común para fotos de perfil */
+    border: 5px solid white; /* Agrega un borde blanco que destaca la imagen contra el fondo */
+    margin-top: 20px; /* Añade espacio superior para separar la imagen del texto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Añade una sombra suave que da un efecto flotante */
+    transition: transform 0.3s ease-in-out; /* Aplica una transición suave para el efecto de escala */
+}
+
+#header img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen al pasar el ratón, haciéndola más interactiva */
+}
+
+/* --- Secciones Generales --- */
+
+.seccion {
+    background: white; /* Establece un fondo blanco para las secciones, creando contraste con el fondo del documento */
+    margin: 20px auto; /* Añade margen superior e inferior y centra las secciones */
+    padding: 30px; /* Rellena el interior para que el contenido no quede pegado a los bordes */
+    border-radius: 12px; /* Redondea los bordes de las secciones, dando un aspecto suave y moderno */
+    max-width: 800px; /* Limita el ancho para mantener una lectura cómoda */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Añade una sombra sutil para crear un efecto de tarjeta */
+    transition: transform 0.3s ease-in-out; /* Añade una transición suave para los efectos de transformación */
+}
+
+.seccion:hover {
+    transform: translateY(-10px); /* Eleva la sección al pasar el ratón, añadiendo un efecto de profundidad */
+}
+
+/* Títulos de secciones */
+.seccion h2 {
+    font-size: 1.8em; /* Incrementa el tamaño de la fuente para destacar los títulos */
+    color: #2575fc; /* Define un color azul vibrante para los títulos */
+    border-bottom: 3px solid #6a11cb; /* Añade una línea colorida debajo del título para enfatizar */
+    padding-bottom: 5px; /* Espacio debajo del texto, creando separación con la línea */
+    margin-bottom: 15px; /* Añade margen inferior para separar el título del contenido */
+}
+
+/* --- Estilo de los Enlaces --- */
+
+a {
+    color: #2575fc; /* Usa un color azul vibrante para todos los enlaces */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    transition: color 0.3s; /* Añade una transición suave para los cambios de color */
+}
+
+a:hover {
+    color: #6a11cb; /* Cambia a un color púrpura al pasar el ratón, haciendo el enlace interactivo */
+}
+
+/* --- Estilo para Contacto --- */
+
+#contacto {
+    display: flex; /* Usa flexbox para organizar el contenido en una fila */
+    justify-content: space-between; /* Distribuye el espacio de forma equitativa entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos al centro */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a múltiples filas si es necesario */
+    gap: 15px; /* Añade espacio entre los elementos */
+    text-align: center; /* Centra el texto en dispositivos pequeños */
+}
+
+#contacto a {
+    font-weight: bold; /* Resalta los enlaces en la sección de contacto */
+}
+
+/* --- Estilos de la Experiencia y Educación --- */
+
+#educacion article, #experiencia details {
+    margin-top: 20px; /* Añade espacio entre los artículos */
+    padding-left: 15px; /* Añade espacio interior a la izquierda */
+    border-left: 4px solid #6a11cb; /* Coloca una línea púrpura a la izquierda, ayudando a delimitar cada artículo */
+}
+
+#experiencia summary {
+    font-weight: 600; /* Hace el texto más grueso para resaltar el resumen */
+    font-size: 1.2em; /* Aumenta ligeramente el tamaño del texto */
+    cursor: pointer; /* Cambia el cursor al estilo de puntero, indicando que es clicable */
+    transition: color 0.3s; /* Aplica una transición suave para los cambios de color */
+}
+
+#experiencia summary:hover {
+    color: #2575fc; /* Cambia el color al pasar el ratón, resaltando la interacción */
+}
+
+/* --- Estilo para la Sección de Habilidades (Canvas) --- */
+
+#habilidades canvas {
+    display: block; /* Hace que el canvas se comporte como un bloque, ocupando toda la línea */
+    margin: 20px auto; /* Centra el canvas horizontalmente */
+    border-radius: 8px; /* Redondea ligeramente los bordes para suavizar el aspecto */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Aplica una sombra suave para el efecto de profundidad */
+    background: #f4f7fa; /* Usa un fondo claro que coordina con el diseño general */
+}
+
+/* --- Estilo para Multimedia --- */
+
+#multimedia video, #multimedia audio {
+    border-radius: 12px; /* Redondea los bordes del video y el audio */
+    margin: 10px auto; /* Centra los elementos multimedia */
+    display: block; /* Hace que cada elemento ocupe toda la línea */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra suave para dar un efecto flotante */
+}
+
+/* --- Estilo del Formulario de Contacto --- */
+
+#formulario_contacto form {
+    background: #f9f9f9; /* Fondo claro para que se destaque el formulario */
+    padding: 20px; /* Espacio interno para dar respiro al contenido */
+    border-radius: 12px; /* Bordes redondeados para una apariencia amigable */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra suave para crear profundidad */
+}
+
+#formulario_contacto input, #formulario_contacto select, #formulario_contacto button {
+    width: 100%; /* Hace que los campos y el botón ocupen todo el ancho disponible */
+    padding: 10px; /* Añade espacio interno para mejorar la usabilidad */
+    margin-top: 10px; /* Espacio entre cada campo */
+    border-radius: 8px; /* Redondea los bordes para un diseño más suave */
+    border: 1px solid #ddd; /* Bordes claros para que los campos destaquen sutilmente */
+    transition: border-color 0.3s; /* Transición suave para los cambios de color de borde */
+}
+
+#formulario_contacto input:focus, #formulario_contacto select:focus {
+    border-color: #2575fc; /* Cambia el color de borde al hacer foco, indicando que está activo */
+}
+
+#formulario_contacto button {
+    background: #6a11cb; /* Color de fondo púrpura para el botón */
+    color: white; /* Texto blanco para contrastar con el fondo */
+    border: none; /* Elimina el borde para un aspecto más limpio */
+    cursor: pointer; /* Cambia el cursor a puntero para indicar que es interactivo */
+}
+
+#formulario_contacto button:hover {
+    background: #2575fc; /* Cambia el fondo al pasar el ratón, resaltando la interactividad */
+}
+
+/* --- Estilo de la Tabla de Proyectos --- */
+
+#proyectos table {
+    width: 100%; /* Hace que la tabla ocupe todo el ancho disponible */
+    border-collapse: collapse; /* Colapsa los bordes para que se vean como uno solo */
+    margin-top: 10px; /* Espacio superior para separar de los otros elementos */
+}
+
+#proyectos th, #proyectos td {
+    padding: 15px; /* Añade espacio interior a las celdas para una mejor lectura */
+    text-align: left; /* Alinea el texto a la izquierda, típico de tablas */
+    border-bottom: 1px solid #ddd; /* Añade una línea inferior para separar las filas */
+}
+
+#proyectos th {
+    background: #6a11cb; /* Fondo púrpura para el encabezado, destacándolo */
+    color: white; /* Texto blanco para contraste */
+}
+
+#proyectos tbody tr:hover {
+    background: #f1f1f1; /* Cambia el fondo al pasar el ratón, indicando interactividad */
+    transition: background 0.3s; /* Transición suave para los cambios de fondo */
+}
+
+/* --- Estilo del Pie de Página --- */
+
+#footer {
+    background: #333; /* Fondo oscuro para dar peso visual al pie de página */
+    color: white; /* Texto blanco para un buen contraste */
+    padding: 15px 0; /* Espacio interno para separar el contenido */
+    text-align: center; /* Centra el contenido en el pie de página */
+}
+
+#footer p {
+    margin: 5px; /* Margen pequeño para separar las líneas */
+}
+
+#footer:hover {
+    background: #444; /* Cambia el color de fondo al pasar el ratón, haciendo el pie de página interactivo */
+    transition: background 0.3s; /* Añade una transición suave para el cambio de fondo */
+}

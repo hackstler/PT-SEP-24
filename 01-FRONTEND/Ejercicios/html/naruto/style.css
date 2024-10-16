@@ -1,0 +1,114 @@
+/* Reset y configuración básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  /* Contenedor global */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  /* Estilos del encabezado */
+  header {
+    background-color: #f8a100; /* Color naranja para el fondo del encabezado */
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  header img {
+    max-width: 200px; /* Tamaño máximo para el logotipo */
+  }
+  
+  /* Estilos de la navegación */
+  nav {
+    background-color: #004085; /* Color azul oscuro para la barra de navegación */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav li {
+    margin: 0 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+  }
+  
+  nav a:hover {
+    background-color: #002952; /* Azul más oscuro en hover */
+    color: #f4f4f9; /* Color claro para el texto */
+  }
+  
+  /* Estilos del main */
+  main {
+    background-color: #ffffff; /* Fondo blanco para el main */
+    padding: 2rem;
+  }
+  
+  main img {
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+  }
+  
+  h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilo para los párrafos */
+  p {
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Estilo para las habilidades */
+  #skills ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #skills li {
+    background-color: #f8a100; /* Fondo naranja */
+    color: white;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  /* Estilo para el pie de página */
+  footer {
+    background-color: #0056b3; /* Fondo azul oscuro para el pie de página */
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  

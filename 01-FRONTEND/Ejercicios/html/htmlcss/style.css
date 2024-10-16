@@ -1,0 +1,17 @@
+/* Estilo para el cuerpo de la página */
+body {
+    background-color: rgb(43, 43, 43); /* Fondo oscuro para toda la página */
+    color: whitesmoke; /* Color claro para el texto, resalta bien sobre el fondo oscuro */
+  }
+  
+  /* Estilo para el título principal */
+  h1 {
+    text-transform: uppercase; /* Convierte todo el texto del título a mayúsculas */
+  }
+  
+  /* Estilo para los elementos de la lista */
+  li {
+    color: crimson; /* Color rojo intenso para destacar los elementos de la lista */
+    font-style: italic; /* Hace que el texto de la lista esté en cursiva */
+  }
+  

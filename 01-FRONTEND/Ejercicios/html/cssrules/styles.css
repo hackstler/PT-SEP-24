@@ -1,0 +1,20 @@
+/* Estilo para el cuerpo de la página */
+body {
+    background-color: rgb(52, 52, 52); /* Fondo oscuro para toda la página */
+  }
+  
+  /* Estilo para el título principal */
+  h1 {
+    color: white; /* Texto blanco para el título */
+  }
+  
+  /* Estilo para los párrafos */
+  p {
+    color: skyblue; /* Color azul claro para el texto del párrafo */
+  }
+  
+  /* Estilo para los elementos de lista */
+  li {
+    color: whitesmoke; /* Color blanco humo para los elementos de la lista */
+  }
+  

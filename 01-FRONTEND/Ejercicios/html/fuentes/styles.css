@@ -1,0 +1,22 @@
+/* Importa la fuente 'Open Sans' desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+
+/* Aplica la fuente 'Open Sans' a los párrafos */
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Definición de la fuente 'Bergdool' con @font-face */
+@font-face {
+  font-family: "Bergdool";
+  src: url("/ruta/bergdool.woff2") format("woff2"),
+    /* Ruta del archivo .woff2 */ url("/ruta/bergdool.woff") format("woff"); /* Ruta del archivo .woff */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Aplica la fuente 'Bergdool' a los encabezados h1 y h2 */
+h1,
+h2 {
+  font-family: "Bergdool", sans-serif;
+}

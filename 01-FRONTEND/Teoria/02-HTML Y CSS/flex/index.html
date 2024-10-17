@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplos de Flexbox</title>
+    <style>
+        /* Configuración inicial del contenedor */
+        .container {
+            display: flex;
+            border: 2px solid #333;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo base para los elementos flexibles */
+        .item {
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            border-radius: 4px;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Ejemplos de Flexbox</h1>
+    <p>Observa cómo cambian los elementos cuando aplicamos diferentes propiedades de Flexbox.</p>
+
+    <!-- Contenedor para demostrar flex-direction -->
+    <h2>flex-direction</h2>
+    <p>Utiliza la propiedad <code>flex-direction</code> para cambiar la dirección de los elementos.</p>
+    <div class="container" id="container1">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <!-- Contenedor para demostrar justify-content -->
+    <h2>justify-content</h2>
+    <p>Utiliza la propiedad <code>justify-content</code> para alinear los elementos en la dirección principal.</p>
+    <div class="container" id="container2">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <!-- Contenedor para demostrar align-items -->
+    <h2>align-items</h2>
+    <p>Utiliza la propiedad <code>align-items</code> para alinear los elementos en la dirección perpendicular.</p>
+    <div class="container" style="height: 150px;" id="container3">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <!-- Contenedor para demostrar flex-wrap -->
+    <h2>flex-wrap</h2>
+    <p>Utiliza la propiedad <code>flex-wrap</code> para permitir que los elementos se ajusten a varias líneas.</p>
+    <div class="container" id="container4">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+    </div>
+
+    <!-- Contenedor para demostrar flex-grow y flex-shrink -->
+    <h2>flex-grow y flex-shrink</h2>
+    <p>Utiliza las propiedades <code>flex-grow</code> y <code>flex-shrink</code> para ajustar el crecimiento y
+        encogimiento de los elementos.</p>
+    <div class="container" id="container5">
+        <div class="item" style="flex-grow: 1;">Item 1</div>
+        <div class="item" style="flex-grow: 2;">Item 2</div>
+        <div class="item" style="flex-grow: 1;">Item 3</div>
+    </div>
+
+    <!-- Contenedor para demostrar align-self -->
+    <h2>align-self</h2>
+    <p>Utiliza la propiedad <code>align-self</code> para alinear un solo elemento de manera diferente al resto.</p>
+    <div class="container" style="height: 150px;" id="container6">
+        <div class="item">Item 1</div>
+        <div class="item" style="align-self: flex-end;">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <script>
+        // Step-by-step explanations and properties to apply in each container
+
+        // Paso 1: flex-direction
+        // Explica que `flex-direction` establece la dirección en la que se colocan los elementos:
+        // "row" coloca los elementos en una fila y "column" en una columna.
+        document.getElementById('container1').style.flexDirection = 'row';
+        // Cambia a 'column' y observa cómo los elementos se organizan verticalmente.
+        // document.getElementById('container1').style.flexDirection = 'column';
+
+        // Paso 2: justify-content
+        // Explica que `justify-content` alinea los elementos a lo largo del eje principal:
+        // Cambia los valores a `flex-start`, `center`, `space-between`, `space-around`.
+        document.getElementById('container2').style.justifyContent = 'space-between';
+
+        // Paso 3: align-items
+        // Explica que `align-items` alinea los elementos en el eje perpendicular.
+        // Prueba con valores como `flex-start`, `center`, `flex-end`, `stretch`.
+        document.getElementById('container3').style.alignItems = 'center';
+
+        // Paso 4: flex-wrap
+        // Explica que `flex-wrap` permite que los elementos se ajusten en varias líneas si es necesario.
+        // Los valores son `nowrap`, `wrap`, `wrap-reverse`.
+        document.getElementById('container4').style.flexWrap = 'wrap';
+
+        // Paso 5: flex-grow y flex-shrink
+        // Explica que `flex-grow` permite que los elementos crezcan para llenar el espacio disponible.
+        // Compara con `flex-shrink` que permite que los elementos se encojan si es necesario.
+        // Ya está aplicado en el HTML en línea: el segundo item tiene `flex-grow: 2;`.
+
+        // Paso 6: align-self
+        // Explica que `align-self` sobrescribe el valor de `align-items` para un solo elemento.
+        // Ya está aplicado en el HTML: el segundo item está alineado al final con `flex-end`.
+    </script>
+</body>
+
+</html>

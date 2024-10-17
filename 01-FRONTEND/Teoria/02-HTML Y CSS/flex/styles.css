@@ -1,0 +1,16 @@
+/* Estilo base para todos los contenedores */
+.container {
+  display: flex; /* Activa Flexbox */
+  border: 2px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilo base para los elementos flexibles */
+.item {
+  background-color: #0056b3;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 4px;
+}

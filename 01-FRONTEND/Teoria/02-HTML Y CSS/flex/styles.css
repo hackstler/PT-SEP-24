@@ -14,3 +14,51 @@
   margin: 5px;
   border-radius: 4px;
 }
+
+/* Paso 1 - flex-direction */
+/* container1: Prueba valores como row y column para ver la distribución horizontal y vertical */
+#container1 {
+  flex-direction: row; /* Cambia a column para ver la distribución vertical */
+}
+
+/* Paso 2 - justify-content */
+/* container2: Alineación en el eje principal con diferentes valores de justify-content */
+#container2 {
+  justify-content: space-between; /* Cambia a flex-start, center, space-around, etc. */
+}
+
+/* Paso 3 - align-items */
+/* container3: Alineación en el eje perpendicular. Cambia los valores para ver el efecto */
+#container3 {
+  align-items: center; /* Prueba con flex-start, flex-end, stretch */
+  height: 150px; /* Altura fija para observar el efecto de align-items */
+}
+
+/* Paso 4 - flex-wrap */
+/* container4: Ajuste de elementos en múltiples líneas cuando no caben en una sola */
+#container4 {
+  flex-wrap: wrap; /* Cambia a nowrap para ver cómo se mantiene en una sola línea */
+}
+
+/* Paso 5 - flex-grow y flex-shrink */
+/* container5: Define cómo los elementos crecen o se encogen */
+#container5 .item:nth-child(1) {
+  flex-grow: 1; /* Primer elemento crece con valor 1 */
+}
+#container5 .item:nth-child(2) {
+  flex-grow: 2; /* Segundo elemento crece el doble que los otros */
+}
+#container5 .item:nth-child(3) {
+  flex-grow: 1; /* Tercer elemento crece con valor 1 */
+}
+/* Puedes añadir flex-shrink para que los elementos se encojan si es necesario */
+
+#container5 .item {
+  flex-shrink: 1; /* Prueba con diferentes valores de flex-shrink para observar el comportamiento al reducir espacio */
+}
+
+/* Paso 6 - align-self */
+/* container6: Alínea un elemento de forma diferente al resto usando align-self */
+#container6 .item:nth-child(2) {
+  align-self: flex-end; /* Cambia a center, stretch o flex-start para ver cómo afecta al elemento individualmente */
+}

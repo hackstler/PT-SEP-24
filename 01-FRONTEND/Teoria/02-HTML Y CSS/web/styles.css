@@ -1,0 +1,48 @@
+/* Contenedor general de tarjetas */
+#contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Estilos para las tarjetas generadas */
+.tarjeta {
+  width: 200px;
+  height: 250px;
+  padding: 20px;
+  background-color: lightblue;
+  border: 2px solid #333;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Nombre dentro de la tarjeta */
+.tarjeta h3 {
+  margin: 10px 0;
+}
+
+/* Estilos para el botón de cambio de color */
+.cambiar-color-btn {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cambiar-color-btn:hover {
+  background-color: #218838;
+}

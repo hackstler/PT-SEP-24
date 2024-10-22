@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos de Teclado</title>
+</head>
+
+<body>
+    <h2>Escribe algo en el campo de texto:</h2>
+    <input type="text" id="texto" placeholder="Escribe algo aquí...">
+    <p id="resultado"></p>
+
+    <script>
+        const inputText = document.getElementById("texto");
+        const resultado = document.getElementById("resultado");
+
+        inputText.addEventListener("keyup", (event) => {
+            console.log("🚀 ~ inputText.addEventListener ~ event:", event.target.value)
+            resultado.textContent = `Tecla presionada: ${event.key}`;
+        });
+    </script>
+</body>
+
+</html>
+
+
+• Aquí usamos el evento keyup, que se dispara cada vez que el usuario suelta una tecla en el campo de texto. Luego,
+actualizamos el contenido del párrafo resultado para mostrar qué tecla se ha presionado.
+• Este tipo de eventos son útiles para formularios, validaciones o cualquier interacción que dependa de la entrada del
+usuario.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varios Eventos</title>
+</head>
+
+<body>
+    <h2>Prueba con el ratón:</h2>
+    <button id="btnMultiple">Hover o Click en el botón</button>
+    <p id="info"></p>
+
+    <script>
+        const button = document.getElementById("btnMultiple");
+        const info = document.getElementById("info");
+
+        button.addEventListener("mouseover", () => {
+            info.textContent = "Estás sobre el botón.";
+        });
+
+        button.addEventListener("mouseout", () => {
+            info.textContent = "Te alejaste del botón.";
+        });
+
+        button.addEventListener("click", () => {
+            info.textContent = "¡Botón clicado!";
+        });
+    </script>
+</body>
+
+</html>
+
+• Aquí estamos utilizando tres eventos diferentes en el mismo botón: mouseover (cuando el ratón pasa sobre el botón),
+mouseout (cuando el ratón sale del botón), y click (cuando se hace clic en el botón).
+• Cada evento cambia el texto en el párrafo info para reflejar la acción realizada.

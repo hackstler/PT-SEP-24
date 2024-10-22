@@ -1,0 +1,80 @@
+/* Estilo general para los contenedores flexibles */
+.container {
+  display: flex;
+  border: 2px solid #333;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.item {
+  background-color: #0056b3;
+  color: white;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+/* Ejercicio 1 - flex-direction */
+.container1 {
+  flex-direction: row; /* Cambia a column para observar la disposición vertical */
+}
+
+/* Ejercicio 2 - justify-content */
+.container2 {
+  justify-content: space-between; /* Cambia entre flex-start, center, flex-end, space-around */
+}
+
+/* Ejercicio 3 - align-items */
+.container3 {
+  align-items: stretch; /* Cambia a flex-start, center, flex-end para ver la diferencia */
+  height: 200px; /* Ajusta la altura del contenedor */
+}
+
+/* Ejercicio 4 - flex-wrap */
+.container4 {
+  flex-wrap: wrap; /* Cambia a nowrap o wrap-reverse para ver el cambio de ajuste */
+}
+
+/* Ejercicio 5 - flex-grow */
+.container5 {
+  /* La propiedad flex-grow se aplica directamente en los elementos en línea */
+}
+
+/* Ejercicio 6 - flex-shrink */
+.container6 {
+  width: 300px; /* Establece un ancho fijo para observar el efecto de encogimiento */
+}
+
+/* Ejercicio 7 - align-self */
+.container7 {
+  align-items: center; /* Alinea los elementos al centro, mientras algunos sobrescriben con align-self */
+}
+
+/* Ejercicio 8 - Proyecto Final de Flexbox */
+.main-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que la barra lateral se ajuste a una nueva línea en pantallas pequeñas */
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.header,
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.content {
+  flex: 3;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #e2e6ea;
+  padding: 20px;
+}

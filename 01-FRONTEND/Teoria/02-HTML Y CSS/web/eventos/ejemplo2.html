@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos en el DOM</title>
+</head>
+
+<body>
+    <h2>Evento manejado desde JavaScript</h2>
+    <button id="saludarBtn">Saludar</button>
+
+    <script>
+        const button = document.getElementById("saludarBtn");
+        button.onclick = function () {
+            alert("Hola desde el DOM!");
+        }
+    </script>
+</body>
+
+</html>
+• Hemos separado la lógica en JavaScript usando document.getElementById("saludarBtn") para seleccionar el botón y
+asociar un evento onclick que dispara la alerta.
+• Esto es más limpio que definir directamente el evento en el HTML. Sin embargo, aún podemos mejorar más este enfoque
+usando addEventListener.

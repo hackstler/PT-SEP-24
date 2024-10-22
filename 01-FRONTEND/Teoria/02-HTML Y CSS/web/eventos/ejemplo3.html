@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuchadores de Eventos</title>
+</head>
+
+<body>
+    <h2>Uso de EventListeners</h2>
+    <button id="btn">Púlsame</button>
+    <p id="mensaje"></p>
+
+    <script>
+        const button = document.getElementById("btn");
+        const mensaje = document.getElementById("mensaje");
+
+        const handleClick = () => {
+            mensaje.textContent = "¡Botón pulsado!";
+        }
+
+        button.addEventListener("click", handleClick);
+    </script>
+</body>
+
+</html>
+
+• Hemos usado addEventListener para vincular el evento click al botón. La función handleClick cambia el texto del
+párrafo con el id mensaje cuando se pulsa el botón.
+• Esto permite una mejor separación entre la lógica del evento y el HTML. Además, addEventListener ofrece más
+flexibilidad, como la posibilidad de eliminar eventos en el futuro si fuera necesario.

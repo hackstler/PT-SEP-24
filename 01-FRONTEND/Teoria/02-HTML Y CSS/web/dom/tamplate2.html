@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenido dinámico e interactivo</title>
+</head>
+
+<body>
+    <h2>Actualizar Información del Usuario</h2>
+
+    <form id="form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" placeholder="Escribe tu nombre" required>
+        <br><br>
+        <label for="job">Trabajo:</label>
+        <input type="text" id="job" placeholder="Escribe tu trabajo" required>
+        <br><br>
+        <button type="submit">Actualizar</button>
+    </form>
+
+    <div id="nameSelector"></div>
+
+    <script>
+        const form = document.getElementById('form');
+        const contentApp = document.getElementById('nameSelector');
+
+        // Función que actualiza el contenido dinámicamente
+        const updateContent = (name, job) => {
+            let html = `<ul>
+                <li>Nombre: ${name}</li>
+                <li>Trabajo: ${job}</li>
+            </ul>`;
+            contentApp.innerHTML = html;
+        }
+
+        // Evento submit del formulario para actualizar el contenido
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evitar el envío del formulario
+            const name = document.getElementById('name').value;
+            const job = document.getElementById('job').value;
+
+            // Llamamos a la función para actualizar el contenido
+            updateContent(name, job);
+        });
+    </script>
+</body>
+
+</html>

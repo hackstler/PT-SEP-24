@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar contenido dinámico en HTML</title>
+</head>
+
+<body>
+    <h2>Información del Usuario</h2>
+    <div id="nameSelector"></div>
+
+    <script>
+        let name = 'Alberto';
+        let job = 'Frontend Developer';
+
+        // Creamos la plantilla con template literals
+        let html = `<ul>
+            <li>Nombre: ${name}</li>
+            <li>Trabajo: ${job}</li>
+        </ul>`;
+
+        // Seleccionamos el contenedor donde se añadirá el contenido
+        const contentApp = document.querySelector('#nameSelector');
+
+        // Insertamos el HTML generado dinámicamente
+        contentApp.innerHTML = html;
+    </script>
+</body>
+
+</html>

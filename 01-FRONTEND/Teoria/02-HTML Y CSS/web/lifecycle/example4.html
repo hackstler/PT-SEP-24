@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOMContentLoaded con Script</title>
+</head>
+
+<body>
+    <h2>Ejemplo de script y DOMContentLoaded</h2>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            alert("El DOM está listo");
+        });
+        alert("El script se ejecutó");
+    </script>
+</body>
+
+</html>
+
+
+Si el navegador encuentra un script en el HTML, pausará la construcción del DOM hasta que el script se ejecute, ya que
+el script podría modificar el DOM.
+
+• Primero se ejecuta el alert “El script se ejecutó” y luego el evento DOMContentLoaded, ya que el script debe
+ejecutarse antes de terminar de construir el DOM.

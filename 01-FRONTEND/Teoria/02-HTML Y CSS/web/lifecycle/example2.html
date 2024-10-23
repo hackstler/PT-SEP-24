@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Load Event Example</title>
+</head>
+
+<body>
+    <h2>Ejemplo de evento Load</h2>
+    <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0" alt="Imagen">
+    <script>
+        window.onload = () => {
+            let img = document.getElementById("img");
+            alert(`Tamaño de la imagen después de cargar: ${img.offsetWidth}x${img.offsetHeight}`);
+        };
+    </script>
+</body>
+
+</html>
+
+El evento load se dispara cuando todos los recursos de la página (imágenes, estilos, etc.) se han cargado completamente.
+Este es el mejor momento para hacer algo que dependa de recursos externos.
+
+• load espera a que la imagen y todos los recursos se carguen antes de ejecutarse.
+• Utilidad: Trabajar con imágenes, fuentes, o estilos que dependen de ser completamente cargados.

@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- Indica que este documento es un archivo HTML5 y establece el idioma del contenido a español -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres del documento como UTF-8, permitiendo representar la mayoría de los caracteres especiales y símbolos correctamente -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Establece la configuración de la ventana gráfica (viewport) para dispositivos móviles, asegurando que el contenido se ajuste correctamente en pantallas de diferentes tamaños -->
+
     <title>Insertar contenido dinámico en HTML</title>
+    <!-- Define el título de la página, que aparecerá en la pestaña del navegador o en los marcadores -->
 </head>
 
 <body>
     <h2>Información del Usuario</h2>
+    <!-- Un encabezado de segundo nivel que se mostrará en la página -->
+
     <div id="nameSelector"></div>
+    <!-- Un contenedor div con un ID único llamado 'nameSelector', donde se insertará dinámicamente el contenido HTML -->
 
     <script>
         let name = 'Alberto';
         let job = 'Frontend Developer';
+        <!-- Definimos dos variables, 'name' y 'job', que contienen respectivamente el nombre del usuario y su ocupación. Estos valores se utilizarán más adelante para generar el contenido dinámico -->
 
         // Creamos la plantilla con template literals
         let html = `<ul>
             <li>Nombre: ${name}</li>
             <li>Trabajo: ${job}</li>
         </ul>`;
+        // < !--Utilizamos template literals(comillas invertidas) para crear una cadena HTML que contiene una lista desordenada(<ul>).
+        //     Dentro de esta plantilla, insertamos dinámicamente las variables 'name' y 'job' utilizando la sintaxis ${variable} -->
 
-        // Seleccionamos el contenedor donde se añadirá el contenido
+        //     // Seleccionamos el contenedor donde se añadirá el contenido
         const contentApp = document.querySelector('#nameSelector');
+        //     <!-- Usamos 'document.querySelector' para seleccionar el elemento con el ID 'nameSelector'. Esta es la referencia al contenedor donde se añadirá el contenido dinámico -->
 
-        // Insertamos el HTML generado dinámicamente
+        //     // Insertamos el HTML generado dinámicamente
         contentApp.innerHTML = html;
+        //     <!-- Usamos la propiedad 'innerHTML' para insertar el contenido HTML dinámico generado en la variable 'html' dentro del contenedor seleccionado 'contentApp'.
+        //      De este modo, los datos del usuario aparecerán en la página en forma de lista -->
     </script>
 </body>
 

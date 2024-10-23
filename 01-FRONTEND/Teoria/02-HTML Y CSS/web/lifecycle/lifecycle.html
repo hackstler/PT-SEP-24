@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Ciclo de Vida</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <h1>Ciclo de Vida de la Página</h1>
+    <p>Pasa el ratón sobre el cuadro para cambiar su color, o recarga/cierra la página para ver otros eventos.</p>
+
+    <img id="image" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0" alt="Imagen de prueba">
+
+    <div id="colorBox" style="width: 200px; height: 200px; background-color: blue;"></div>
+
+    <script>
+        // DOMContentLoaded: Se dispara cuando el DOM está completamente cargado
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM completamente cargado y construido");
+        });
+
+        // window.load: Se dispara cuando todos los recursos (imágenes, estilos, etc.) están completamente cargados
+        window.addEventListener('load', () => {
+            const image = document.getElementById('image');
+            console.log("Página completamente cargada con recursos");
+            console.log(`Tamaño de la imagen: ${image.offsetWidth}x${image.offsetHeight}`);
+        });
+
+        // window.beforeunload: Se dispara cuando el usuario intenta abandonar la página
+        window.addEventListener("beforeunload", (event) => {
+            console.log("Usuario está intentando salir de la página");
+            // Podemos mostrar un mensaje para confirmar que el usuario quiere irse
+            event.preventDefault();
+            event.returnValue = '';
+        });
+
+        // window.unload: Se dispara cuando el usuario abandona la página
+        window.addEventListener("unload", () => {
+            console.log("Usuario ha abandonado la página");
+        });
+
+        // Cambia de color al pasar el ratón sobre el div
+        const colorBox = document.getElementById('colorBox');
+        colorBox.addEventListener('mouseover', () => {
+            colorBox.style.backgroundColor = 'red';
+            console.log("El ratón ha entrado en el cuadro");
+        });
+
+        // Vuelve al color original cuando el ratón sale
+        colorBox.addEventListener('mouseout', () => {
+            colorBox.style.backgroundColor = 'blue';
+            console.log("El ratón ha salido del cuadro");
+        });
+    </script>
+
+</body>
+
+</html>

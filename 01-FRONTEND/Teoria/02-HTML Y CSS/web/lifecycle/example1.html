@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOMContentLoaded Example</title>
+</head>
+
+<body>
+    <h2>Ejemplo de DOMContentLoaded</h2>
+    <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0" alt="Imagen">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            alert('El DOM está listo');
+            let img = document.getElementById("img");
+            alert(`Tamaño de la imagen: ${img.offsetWidth}x${img.offsetHeight}`);
+        });
+    </script>
+</body>
+
+</html>
+
+El evento DOMContentLoaded se dispara cuando el HTML se ha cargado y el DOM está completamente construido, pero no
+necesariamente los recursos externos como imágenes o hojas de estilo.
+Este evento es útil para manipular el DOM en cuanto está listo.
+
+• El evento DOMContentLoaded es capturado usando addEventListener. En este punto, el DOM está listo, pero la imagen
+puede no haberse cargado completamente (por lo que los tamaños pueden ser incorrectos).
+• Utilidad: Iniciar lógica que dependa de la estructura HTML sin esperar a la carga completa de los recursos externos.

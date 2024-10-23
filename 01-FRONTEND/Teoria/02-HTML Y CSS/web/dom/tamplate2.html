@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+<!-- Indica que este documento es un archivo HTML5 y define el idioma del contenido como español -->
 
 <head>
     <meta charset="UTF-8">
+    <!-- Define la codificación de caracteres del documento como UTF-8, permitiendo representar la mayoría de los caracteres especiales correctamente -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Establece la configuración de la ventana gráfica (viewport) para dispositivos móviles, asegurando que el contenido se ajuste correctamente en pantallas de diferentes tamaños -->
+
     <title>Contenido dinámico e interactivo</title>
+    <!-- Define el título de la página, que aparecerá en la pestaña del navegador o en los marcadores -->
 </head>
 
 <body>
     <h2>Actualizar Información del Usuario</h2>
+    <!-- Un encabezado de segundo nivel que se mostrará en la página -->
 
     <form id="form">
+        <!-- Inicia un formulario HTML con el identificador 'form', que contendrá los campos de entrada para el nombre y el trabajo -->
+
         <label for="name">Nombre:</label>
+        <!-- Etiqueta que indica al usuario qué debe introducir en el siguiente campo (nombre) -->
+
         <input type="text" id="name" placeholder="Escribe tu nombre" required>
+        <!-- Campo de entrada de texto donde el usuario puede escribir su nombre. 
+             El atributo 'id' se usará para referenciar este elemento en el código JavaScript. 'placeholder' muestra un texto guía y 'required' hace que el campo sea obligatorio -->
+
         <br><br>
+        <!-- Dos saltos de línea para espaciar los elementos visualmente -->
+
         <label for="job">Trabajo:</label>
+        <!-- Etiqueta que indica al usuario que debe introducir su trabajo -->
+
         <input type="text" id="job" placeholder="Escribe tu trabajo" required>
+        <!-- Campo de entrada de texto donde el usuario puede escribir su trabajo. 
+             El atributo 'id' se usará para referenciar este elemento en el código JavaScript. 'required' también hace este campo obligatorio -->
+
         <br><br>
+        <!-- Dos saltos de línea para espaciar los elementos visualmente -->
+
         <button type="submit">Actualizar</button>
+        <!-- Un botón de tipo submit que enviará el formulario cuando se haga clic en él, disparando el evento 'submit' en el formulario -->
     </form>
 
     <div id="nameSelector"></div>
+    <!-- Un contenedor div con el identificador 'nameSelector', donde se mostrará el contenido dinámico generado en el JavaScript -->
 
     <script>
         const form = document.getElementById('form');
+        // <!-- Se selecciona el formulario usando su ID ('form') y se almacena en la variable 'form' para manipularlo posteriormente en JavaScript -->
+
         const contentApp = document.getElementById('nameSelector');
+        // < !--Se selecciona el div donde se mostrará el contenido dinámico('nameSelector') y se almacena en la variable 'contentApp' -- >
 
         // Función que actualiza el contenido dinámicamente
         const updateContent = (name, job) => {
@@ -34,15 +62,22 @@
             </ul>`;
             contentApp.innerHTML = html;
         }
+        // < !--Se define la función 'updateContent', que recibe dos parámetros('name' y 'job') y genera una lista desordenada(<ul>) con el contenido dinámico.
+        //      Luego, el HTML generado se inserta en el contenedor 'contentApp' usando 'innerHTML'. -->
 
         // Evento submit del formulario para actualizar el contenido
         form.addEventListener('submit', (e) => {
             e.preventDefault(); // Evitar el envío del formulario
+            // <!-- Se agrega un escuchador de eventos al formulario, que dispara cuando el formulario es enviado. 
+            //      'e.preventDefault()' evita que el formulario recargue la página o realice su comportamiento por defecto de enviar datos al servidor -->
+
             const name = document.getElementById('name').value;
             const job = document.getElementById('job').value;
+            // <!-- Se obtienen los valores introducidos por el usuario en los campos de entrada con 'id="name"' y 'id="job"', y se almacenan en las variables 'name' y 'job' -->
 
             // Llamamos a la función para actualizar el contenido
             updateContent(name, job);
+            // <!-- Llamamos a la función 'updateContent' pasándole los valores obtenidos para actualizar dinámicamente el contenido del div con el nuevo nombre y trabajo -->
         });
     </script>
 </body>

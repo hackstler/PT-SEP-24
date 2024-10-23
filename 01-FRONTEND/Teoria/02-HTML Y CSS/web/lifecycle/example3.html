@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Beforeunload Event Example</title>
+</head>
+
+<body>
+    <h2>Ejemplo de evento Beforeunload</h2>
+    <script>
+        window.onbeforeunload = () => {
+            return "Hay cambios sin guardar. ¿Estás seguro de salir?";
+        };
+    </script>
+</body>
+
+</html>
+
+Los eventos beforeunload y unload se disparan cuando el usuario está a punto de abandonar la página o cerrar la ventana.
+beforeunload permite pedir confirmación al usuario antes de salir.
+
+• beforeunload permite mostrar una advertencia antes de que el usuario cierre la página.
+• Utilidad: Confirmar con el usuario si realmente desea salir si tiene cambios sin guardar.

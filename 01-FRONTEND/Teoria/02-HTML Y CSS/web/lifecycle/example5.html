@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM y Estilos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h2>Ejemplo de hojas de estilo y scripts</h2>
+    <script>
+        alert(getComputedStyle(document.body).marginTop);
+    </script>
+</body>
+
+</html>
+
+
+Las hojas de estilo no retrasan el evento DOMContentLoaded, a menos que haya un script que dependa de ellas (por
+ejemplo, para calcular estilos).
+
+
+Explicación:
+
+• El script tiene que esperar a que se carguen las hojas de estilo, porque necesita calcular valores dependientes del
+CSS.

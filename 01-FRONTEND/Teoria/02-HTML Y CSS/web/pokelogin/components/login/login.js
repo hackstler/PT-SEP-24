@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { // añadir una escucha en el evento DOMContentLoaded DEL DOM 
     initializeLoginForm();
   });
   
@@ -6,19 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
    * Inicializa el formulario de login y maneja la validación de usuario.
    */
   function initializeLoginForm() {
-    const loginForm = document.getElementById('loginForm');
-    const errorMessage = document.getElementById('error-message');
+    const loginForm = document.getElementById('loginForm');  // sacar el elemento FORM
+    const errorMessage = document.getElementById('error-message'); // sacar el elemento errorMessage
   
     const validUser = {
       username: 'admin',
       password: 'password123',
     };
   
-    loginForm.addEventListener('submit', (event) => {
+    loginForm.addEventListener('submit', (event) => { // añadir una escucha en el evento SUBMIT DEL FORMULARIO
       event.preventDefault();
   
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      const username = document.getElementById('username').value; // sacar el value de username
+      const password = document.getElementById('password').value; // sacar el value de password
   
       validateLogin(username, password, validUser) 
         ? handleLoginSuccess(username) 
@@ -54,8 +54,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Guardamos el estado de login en localStorage
     localStorage.setItem('loggedIn', 'true');
     localStorage.setItem('username', username);
-  
-    // Guardamos la hora de inicio de la sesión en sessionStorage
-    setSessionData('sessionStartTime', new Date().toISOString());
   }
   

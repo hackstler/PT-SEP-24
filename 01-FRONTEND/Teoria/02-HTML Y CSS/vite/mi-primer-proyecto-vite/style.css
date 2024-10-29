@@ -1,0 +1,18 @@
+/* Definición de variable en el elemento padre */
+.parent {
+  --background-color: red; /* Definimos la variable en el ámbito de .parent */
+  color: white;
+}
+
+/* Sobreescribimos la variable en el elemento .first */
+.first {
+  --background-color: lightblue;
+}
+
+/* Aplicación de la variable en los elementos con clase .child */
+.child {
+  background: var(
+    --background-color,
+    violet
+  ); /* Valor predeterminado si la variable no está disponible */
+}

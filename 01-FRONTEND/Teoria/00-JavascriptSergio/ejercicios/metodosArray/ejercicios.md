@@ -1,7 +1,3 @@
-¡Por supuesto! Aquí tienes una serie de ejercicios progresivos para los métodos `filter`, `map` y `find` en JavaScript. Cada ejercicio viene con su descripción, una pista para ayudar a los estudiantes y una explicación detallada del proceso para fomentar una comprensión profunda sin frustración.
-
----
-
 ## **Ejercicios para `filter`**
 
 El método `filter` crea un nuevo array con todos los elementos que pasen una condición que nosotros le indiquemos.

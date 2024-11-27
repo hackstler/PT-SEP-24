@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "CHAMPÚ JHONSON",
+    "precio": 20
+  },
+  {
+    "id": 2,
+    "name": "Jabón de manos",
+    "precio": 3
+  },
+  {
+    "id": 3,
+    "name": "PC Sergio",
+    "precio": 1300
+  }
+]

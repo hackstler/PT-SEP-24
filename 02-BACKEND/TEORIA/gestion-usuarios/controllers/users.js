@@ -31,7 +31,7 @@ const listarUsuario =(req, res)=>{
     res.send('Usuario no encontrado')
 }
 
-const guardarUsuarios=(usuarios)=>{
+const escribirUsuarios=(usuarios)=>{
     const data = fs.writeFileSync(usuariosPath, JSON.stringify(usuarios))
     console.log("🚀 ~ escribirUsuario ~ data:", data)
 }
@@ -42,7 +42,7 @@ const crearUsuario =(req, res)=>{
     newUser.id = usuarios.length + 1
     newUser //{ id: 4,   "nombre": "Carlos Gómez", "email": "carlos.gomez@example.com"}
     usuarios.push(newUser)
-    guardarUsuarios(usuarios)
+    escribirUsuarios(usuarios)
     res.status(200).json(newUser)
 
 }

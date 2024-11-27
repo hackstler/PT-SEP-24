@@ -5,13 +5,18 @@
     "precio": 20
   },
   {
-    "id": 2,
-    "name": "Jabón de manos",
-    "precio": 3
-  },
-  {
     "id": 3,
     "name": "PC Sergio",
     "precio": 1300
+  },
+  {
+    "name": "Auriculares",
+    "precio": 60,
+    "id": 4
+  },
+  {
+    "name": "Telefono Movil",
+    "precio": 300,
+    "id": 5
   }
 ]

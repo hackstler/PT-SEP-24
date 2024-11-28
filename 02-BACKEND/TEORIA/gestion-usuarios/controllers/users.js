@@ -1,81 +1,69 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('fs'); // Importamos el módulo para manejar archivos
+const path = require('path'); // Importamos el módulo para manejar rutas
 
+const usuariosPath = path.join(__dirname, '../data/usuarios.json'); // Ruta al archivo JSON de usuarios
 
-const usuariosPath = path.join(__dirname, '../data/usuarios.json')
+// Función para leer usuarios desde el archivo
+const leerUsarios = () => {
+    const data = fs.readFileSync(usuariosPath, 'utf-8'); // Leemos el archivo
+    return JSON.parse(data); // Parseamos el contenido como JSON
+};
 
+// Función para escribir usuarios en el archivo
+const escribirUsuarios = (usuarios) => {
+    fs.writeFileSync(usuariosPath, JSON.stringify(usuarios, null, 2)); // Escribimos los datos en formato JSON
+};
 
-const leerUsarios =()=>{
-    const data = fs.readFileSync(usuariosPath, 'utf-8')
-    console.log("🚀 ~ leerUsarios ~ data:", data)
-    return JSON.parse(data)
-}
+// Controlador para listar todos los usuarios
+const listarUsarios = (req, res) => {
+    const users = leerUsarios(); // Obtenemos los usuarios
+    res.json(users); // Enviamos los usuarios como respuesta
+};
 
-const listarUsarios =(req, res)=>{
-    const users = leerUsarios()
-    res.json(users)
-}
+// Controlador para listar un usuario por ID
+const listarUsuario = (req, res) => {
+    const id = +req.params.id; // Obtenemos el ID desde los parámetros
+    const users = leerUsarios(); // Obtenemos los usuarios
+    const user = users.find((user) => user.id === id); // Buscamos el usuario por ID
 
-const listarUsuario =(req, res)=>{
-    const id = +req.params.id
-    console.log("🚀 ~ listarUsuario ~ id:", id)
-    const users = leerUsarios()
-    console.log("🚀 ~ listarUsuario ~ users:", users)
-    const user = users.find((user) => {
-        console.log("🚀 ~ user ~ user.id === id:", user.id , id)
-        return user.id === id
-    })
-    console.log("🚀 ~ listarUsuario ~ user:", user)
-    if(user) return res.json(user)
-    res.status(404)
-    res.send('Usuario no encontrado')
-}
+    if (user) return res.json(user); // Respondemos si encontramos el usuario
+    res.status(404).send('Usuario no encontrado'); // Respondemos con error si no lo encontramos
+};
 
-const escribirUsuarios=(usuarios)=>{
-    const data = fs.writeFileSync(usuariosPath, JSON.stringify(usuarios))
-    console.log("🚀 ~ escribirUsuario ~ data:", data)
-}
+// Controlador para crear un usuario
+const crearUsuario = (req, res) => {
+    const usuarios = leerUsarios(); // Obtenemos los usuarios actuales
+    const newUser = req.body; // Obtenemos los datos del nuevo usuario
+    newUser.id = usuarios.length + 1; // Asignamos un ID único
+    usuarios.push(newUser); // Agregamos el nuevo usuario a la lista
+    escribirUsuarios(usuarios); // Guardamos los usuarios actualizados
+    res.status(200).json(newUser); // Respondemos con el nuevo usuario
+};
 
-const crearUsuario =(req, res)=>{
-    const usuarios = leerUsarios() // [{}]
-    const newUser = req.body  //{    "nombre": "Carlos Gómez", "email": "carlos.gomez@example.com"}
-    newUser.id = usuarios.length + 1
-    newUser //{ id: 4,   "nombre": "Carlos Gómez", "email": "carlos.gomez@example.com"}
-    usuarios.push(newUser)
-    escribirUsuarios(usuarios)
-    res.status(200).json(newUser)
+// Controlador para actualizar un usuario
+const actualizarUsuario = (req, res) => {
+    const usuarios = leerUsarios(); // Obtenemos los usuarios actuales
+    const newInfoUser = req.body; // Obtenemos los nuevos datos del usuario
+    const id = +req.params.id; // Obtenemos el ID desde los parámetros
+    const index = usuarios.findIndex(user => user.id === id); // Buscamos el índice del usuario por ID
 
-}
+    if (index === -1) return res.status(404).json({ error: 'Usuario no encontrado' }); // Error si el usuario no existe
 
-const actualizarUsuario =(req, res)=>{
-    const usuarios = leerUsarios()
-    const newInfoUser = req.body
-    const id = +req.params.id
-    const index = usuarios.findIndex(user=> user.id === id)
+    usuarios[index] = { ...usuarios[index], ...newInfoUser }; // Actualizamos los datos del usuario
+    escribirUsuarios(usuarios); // Guardamos los usuarios actualizados
+    res.status(200).json(usuarios[index]); // Respondemos con el usuario actualizado
+};
 
-    if(index === -1){ // que el id no existe en nuestros usuarios
-        return res.status(404).json({error: 'Usuario no encontrado'})
-    }
+// Controlador para eliminar un usuario
+const eliminarUsuario = (req, res) => {
+    const usuarios = leerUsarios(); // Obtenemos los usuarios actuales
+    const id = +req.params.id; // Obtenemos el ID desde los parámetros
+    const usersFiltered = usuarios.filter(user => user.id !== id); // Filtramos los usuarios eliminando el que coincide con el ID
 
-    // { "nombre": "Sergio Muñoz", "email": "sergio.muñoz@example.com", "id": 5 } usuarios[index]
-    // { "nombre": "Sergio Perez", "email": "sergio.muñoz@example.com", "address: "calle valmojado 152"} newInfoUser
-    usuarios[index] = {...usuarios[index], ...newInfoUser}  // { "nombre": "Sergio Perez", "email": "sergio.muñoz@example.com", id: 5,  "address: "calle valmojado 152"}
-    guardarUsuarios(usuarios)
+    if (usersFiltered.length === usuarios.length) return res.status(404).json({ error: 'Usuario no encontrado' }); // Error si el usuario no existe
 
-    res.status(200).json(usuarios[index])
+    escribirUsuarios(usersFiltered); // Guardamos los usuarios actualizados
+    res.status(200).send(); // Respondemos con éxito
+};
 
-}
-const eliminarUsuario =(req, res)=>{
-    const usuarios = leerUsarios()
-    const id =  +req.params.id
-    const usersFiltered = usuarios.filter(user=>user.id !== id)
-
-    if(usersFiltered.length === usuarios.length){ // que el id no existe en nuestros usuarios
-        return res.status(404).json({error: 'Usuario no encontrado'})
-    }
-    guardarUsuarios(usersFiltered)
-    res.status(200).send()
-
-
-}
-module.exports = {leerUsarios, listarUsarios, listarUsuario, crearUsuario, actualizarUsuario, eliminarUsuario}
+module.exports = { listarUsarios, listarUsuario, crearUsuario, actualizarUsuario, eliminarUsuario }; // 

@@ -6,8 +6,9 @@
   },
   {
     "id": 3,
-    "name": "PC Sergio",
-    "precio": 1300
+    "name": "Telefono Movil",
+    "precio": 300,
+    "marca": "Samsung"
   },
   {
     "name": "Auriculares",

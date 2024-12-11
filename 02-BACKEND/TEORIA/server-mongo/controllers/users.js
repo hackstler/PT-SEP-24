@@ -6,12 +6,14 @@ const updateUser = async (req, res) => {
 
     try {
         const user = await User.findByIdAndUpdate(req.params.id, { ...req.body })
+        const userUpdated = await User.findById(user._id)
         if (!user) {
             return res.status(404).json({ errorMessage: 'User not found' })
         }
-        res.json(user)
+        res.json(userUpdated)
 
     } catch (error) {
+        console.log("🚀 ~ updateUser ~ error:", error)
         res.status(500)
     }
 }

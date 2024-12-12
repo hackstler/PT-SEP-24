@@ -3,7 +3,7 @@ const connectDB = require('./config/db')
 const userRoutes = require('./routes/users')
 const authRouter = require('./routes/auth')
 const productRouter = require('./routes/products')
-const orderRouter = require('./routes/eressmuypesado')
+const orderRouter = require('./routes/orders')
 
 require('dotenv').config();
 
